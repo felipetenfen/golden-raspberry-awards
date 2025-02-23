@@ -24,14 +24,24 @@ RUN --mount=type=bind,source=pom.xml,target=pom.xml \
     --mount=type=cache,target=/root/.m2 ./mvnw dependency:go-offline -DskipTests
 
 ################################################################################
+FROM deps as test
 
+WORKDIR /build
+
+COPY pom.xml pom.xml
+COPY ./src src/
+
+# Rodar os testes
+RUN --mount=type=cache,target=/root/.m2 ./mvnw test
+
+################################################################################
 # Create a stage for building the application based on the stage with downloaded dependencies.
 # This Dockerfile is optimized for Java applications that output an uber jar, which includes
 # all the dependencies needed to run your app inside a JVM. If your app doesn't output an uber
 # jar and instead relies on an application server like Apache Tomcat, you'll need to update this
 # stage with the correct filename of your package and update the base image of the "final" stage
 # use the relevant app server, e.g., using tomcat (https://hub.docker.com/_/tomcat/) as a base image.
-FROM deps as package
+FROM test as package
 
 WORKDIR /build
 
@@ -86,6 +96,12 @@ COPY --from=extract build/target/extracted/dependencies/ ./
 COPY --from=extract build/target/extracted/spring-boot-loader/ ./
 COPY --from=extract build/target/extracted/snapshot-dependencies/ ./
 COPY --from=extract build/target/extracted/application/ ./
+
+# Copy the CSV file to the container
+COPY src/main/resources/Movielist.csv /app/resources/Movielist.csv
+
+# Set the environment variable for the CSV file path
+ENV CSV_FILE_PATH=/app/resources/Movielist.csv
 
 EXPOSE 8080
 

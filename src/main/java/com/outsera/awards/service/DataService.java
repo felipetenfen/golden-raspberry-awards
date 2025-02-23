@@ -28,7 +28,12 @@ public class DataService {
 
     @EventListener(ApplicationReadyEvent.class)
     public void persistDataOnStartup() {
-        System.out.println("CSV File Path: " + csvFilePath);
+        String csvFilePathEnv = System.getenv("CSV_FILE_PATH");
+
+        if (csvFilePathEnv != null) {
+            csvFilePath = csvFilePathEnv;
+        }
+
         persistData(csvFilePath);
     }
 

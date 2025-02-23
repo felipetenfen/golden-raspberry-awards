@@ -2,6 +2,10 @@
 
 Esta API RESTful permite a leitura da lista de indicados e vencedores da categoria Pior Filme do Golden Raspberry Awards e fornece informações sobre os produtores com maior e menor intervalo entre prêmios consecutivos.
 
+## Como Funciona
+
+A aplicação lê os dados a partir de um arquivo CSV e os armazena em um banco de memória H2. O caminho padrão do arquivo CSV pode ser alterado via argumento de execução. O banco H2 é acessível via interface web para facilitar a inspeção dos dados carregados.
+
 ## Requisitos
 
 ### Usando Maven
@@ -81,3 +85,15 @@ A documentação da API pode ser acessada através do Swagger UI. Siga os passos
 2. Abra o navegador e acesse a URL: http://localhost:8080/swagger-ui.html
 
 A partir dessa URL, você poderá visualizar e interagir com os endpoints da API.
+
+## Banco de Dados H2
+A aplicação utiliza o banco de memória H2 para armazenar os dados extraídos do arquivo CSV. Para acessar o banco:
+
+1. Certifique-se de que a aplicação está em execução.
+2. Acesse o console do H2 no navegador: http://localhost:8080/h2-console
+3. Use as seguintes configurações para login:
+   - `JDBC URL: jdbc:h2:mem:testdb`
+   - `Usuário: sa`
+   - `Senha: (deixe em branco)`
+
+Isso permitirá a visualização e manipulação dos dados diretamente no banco de memória.

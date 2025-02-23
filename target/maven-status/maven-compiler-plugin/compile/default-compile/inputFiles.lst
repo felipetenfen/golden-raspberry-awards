@@ -1,0 +1,16 @@
+/home/felipe-tenfen/Desktop/golden-raspberry-awards/src/main/java/com/outsera/awards/GoldenRaspberryAwardApplication.java
+/home/felipe-tenfen/Desktop/golden-raspberry-awards/src/main/java/com/outsera/awards/controller/AwardsController.java
+/home/felipe-tenfen/Desktop/golden-raspberry-awards/src/main/java/com/outsera/awards/dto/MovieDTO.java
+/home/felipe-tenfen/Desktop/golden-raspberry-awards/src/main/java/com/outsera/awards/dto/ProducerDTO.java
+/home/felipe-tenfen/Desktop/golden-raspberry-awards/src/main/java/com/outsera/awards/dto/StudioDTO.java
+/home/felipe-tenfen/Desktop/golden-raspberry-awards/src/main/java/com/outsera/awards/model/MovieModel.java
+/home/felipe-tenfen/Desktop/golden-raspberry-awards/src/main/java/com/outsera/awards/model/ProducerIntervalModel.java
+/home/felipe-tenfen/Desktop/golden-raspberry-awards/src/main/java/com/outsera/awards/model/ProducerModel.java
+/home/felipe-tenfen/Desktop/golden-raspberry-awards/src/main/java/com/outsera/awards/model/ProducersIntervalsModel.java
+/home/felipe-tenfen/Desktop/golden-raspberry-awards/src/main/java/com/outsera/awards/model/StudioModel.java
+/home/felipe-tenfen/Desktop/golden-raspberry-awards/src/main/java/com/outsera/awards/repository/MovieRepository.java
+/home/felipe-tenfen/Desktop/golden-raspberry-awards/src/main/java/com/outsera/awards/repository/ProducerRepository.java
+/home/felipe-tenfen/Desktop/golden-raspberry-awards/src/main/java/com/outsera/awards/repository/StudioRepository.java
+/home/felipe-tenfen/Desktop/golden-raspberry-awards/src/main/java/com/outsera/awards/service/CsvService.java
+/home/felipe-tenfen/Desktop/golden-raspberry-awards/src/main/java/com/outsera/awards/service/DataService.java
+/home/felipe-tenfen/Desktop/golden-raspberry-awards/src/main/java/com/outsera/awards/service/MovieService.java

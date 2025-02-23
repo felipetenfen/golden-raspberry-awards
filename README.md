@@ -45,19 +45,19 @@ A aplicação lê os dados a partir de um arquivo CSV e os armazena em um banco 
 
 1. Baixe a imagem Docker:  
     ```bash
-    docker pull lipetenfen/golden-raspberry-awards:1.2
+    docker pull lipetenfen/golden-raspberry-awards:1.3
     ```
    
 2. Execute o container:
     ```bash
-    docker run -d -p 8080:8080 --name golden-raspberry-awards lipetenfen/golden-raspberry-awards:1.2
+    docker run -d -p 8080:8080 --name golden-raspberry-awards lipetenfen/golden-raspberry-awards:1.3
     ```
 
 3. Para rodar a aplicação com um arquivo de entrada diferente do definido:
     ```bash
     docker run -p 8080:8080 \
    -v /caminho_arquivo/nome_arquivo.csv:/app/nome_arquivo.csv \
-   golden-raspberry-awards:1.2 --spring.csv.file-path=/app/nome_arquivo.csv
+   lipetenfen/golden-raspberry-awards:1.3 --spring.csv.file-path=/app/nome_arquivo.csv
 
     ```
 
